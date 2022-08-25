@@ -1,4 +1,5 @@
 .todosList {
+  padding-top: 1rem;
   width: 35%;
   min-width: 24rem;
   display: flex;
