@@ -1,0 +1,6 @@
+.badge {
+  padding: 0.25rem 0.85rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  width: max-content;
+}
