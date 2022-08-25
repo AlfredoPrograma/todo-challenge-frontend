@@ -1,8 +1,8 @@
 import { AddTodoControls } from './components/AddTodoControls'
-import { TodoModal } from './components/TodoModal'
-import TodoPageLayout from './components/TodoPageLayout/TodoPageLayout'
-import { TodosList } from './components/TodosList'
 import { TodoContextProvider } from './context/TodoContext'
+import { TodoModal } from './components/TodoModal'
+import { TodosList } from './components/TodosList'
+import TodoPageLayout from './components/TodoPageLayout/TodoPageLayout'
 
 const TodoPage = () => {
   return (

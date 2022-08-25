@@ -1,5 +1,5 @@
-import { useTodoPage } from 'pages/TodoPage/hooks/useTodoPage'
 import { TodoCard } from '../TodoCard'
+import { useTodoPage } from 'pages/TodoPage/hooks/useTodoPage'
 import styles from './TodosList.module.css'
 
 const TodosList = () => {

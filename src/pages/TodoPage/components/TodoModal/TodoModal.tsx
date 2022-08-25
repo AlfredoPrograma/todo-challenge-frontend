@@ -1,13 +1,13 @@
 import { Button } from 'components/Button'
+import { CATEGORIES_OPTIONS } from 'pages/TodoPage/constants/todoCategories'
 import { IconButton } from 'components/IconButton'
 import { Select } from 'components/Select'
 import { TextArea } from 'components/TextArea'
 import { TextInput } from 'components/TextInput'
-import { useTodoPage } from 'pages/TodoPage/hooks/useTodoPage'
-import { CATEGORIES_OPTIONS } from 'pages/TodoPage/constants/todoCategories'
 import { useMemo } from 'react'
-import useTodoModal from './hooks/useTodoModal'
+import { useTodoPage } from 'pages/TodoPage/hooks/useTodoPage'
 import styles from './TodoModal.module.css'
+import useTodoModal from './hooks/useTodoModal'
 
 const TodoModal = () => {
   const {

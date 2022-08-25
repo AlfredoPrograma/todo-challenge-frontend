@@ -1,8 +1,8 @@
-import { TodoDTO, Todo } from 'models/Todo'
 import { createContext, useState } from 'react'
 import { generateId } from 'helpers/generateId'
+import { TodoDTO, Todo } from 'models/Todo'
 
-interface TodoContextProviderValues {
+interface TodoContextState {
   states: {
     isOpenTodoModal: boolean
     todos: Todo[]
@@ -17,11 +17,12 @@ interface TodoContextProviderValues {
     toggleTodoCheck: (todoId: string) => void
   }
 }
-const TodoContext = createContext<TodoContextProviderValues | undefined>(undefined)
 
 interface TodoContextProviderProps {
   children: JSX.Element | JSX.Element[]
 }
+
+const TodoContext = createContext<TodoContextState | undefined>(undefined)
 
 const TodoContextProvider = ({ children }: TodoContextProviderProps) => {
   // ToDo's data state and handlers
@@ -86,7 +87,7 @@ const TodoContextProvider = ({ children }: TodoContextProviderProps) => {
     setIsOpenTodoModal(false)
   }
 
-  const providerValues: TodoContextProviderValues = {
+  const providerValues: TodoContextState = {
     states: {
       isOpenTodoModal,
       selectedTodo,
@@ -110,4 +111,3 @@ const TodoContextProvider = ({ children }: TodoContextProviderProps) => {
 }
 
 export { TodoContext, TodoContextProvider }
-export type { TodoContextProviderValues }

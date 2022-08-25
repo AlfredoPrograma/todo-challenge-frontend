@@ -1,8 +1,8 @@
 import { Badge } from 'components/Badge'
+import { CATEGORY_BADGE_MAP } from 'pages/TodoPage/constants/todoCategories'
 import { IconButton } from 'components/IconButton'
 import { Todo } from 'models/Todo'
 import { useTodoPage } from 'pages/TodoPage/hooks/useTodoPage'
-import { CATEGORY_BADGE_MAP } from 'pages/TodoPage/constants/todoCategories'
 import styles from './TodoCard.module.css'
 
 interface TodoCardProps {
@@ -29,7 +29,7 @@ const TodoCard = ({ todo }: TodoCardProps) => {
         <footer className={styles.footer}>
           <small>Created at: {createdAt.toLocaleDateString()}</small>
 
-          { isCompleted && <small className={styles.doneText}>DONE</small>}
+          { isCompleted && <small className={styles.doneText}>DONE</small> }
         </footer>
       </div>
 
@@ -51,7 +51,7 @@ const TodoCard = ({ todo }: TodoCardProps) => {
             onClick={() => toggleTodoCheck(id)}
             icon={<i className="fa-solid fa-check"></i>}
           />
-        </div>
+      </div>
     </article>
   )
 }
