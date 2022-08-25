@@ -1,8 +1,29 @@
+.header {
+  font-family: 'Bungee', cursive;
+  text-align: center;
+  font-size: 6rem;
+  color: white;
+  -webkit-text-stroke: 3px #000;
+  text-shadow: 5px 5px 0px #000;
+}
+
 .todosList {
-  padding-top: 1rem;
   width: 35%;
   min-width: 24rem;
+
+}
+
+.container {
   display: flex;
   flex-direction: column;
+  padding-top: 1rem;
   gap: 2rem;
+}
+
+.emptyTodoState {
+  text-align: center;
+  border: 3px solid #2d2d2d;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 6px;
 }
