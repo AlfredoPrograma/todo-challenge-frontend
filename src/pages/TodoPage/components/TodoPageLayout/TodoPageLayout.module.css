@@ -1,0 +1,8 @@
+.layout {
+  transition: all 0.3s;
+  height: 100%;
+}
+
+.isActiveModal {
+  filter: blur(2px)
+}
