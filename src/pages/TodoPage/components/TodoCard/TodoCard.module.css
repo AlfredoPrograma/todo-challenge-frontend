@@ -94,4 +94,13 @@
       width: 100%;
       flex-direction: column;
     }
+
+    .title {
+      font-size: 1.5rem;
+    }
+
+    .actions {
+      margin-inline: auto;
+      flex-direction: row;
+    }
 }
