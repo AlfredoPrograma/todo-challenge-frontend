@@ -1,43 +1,31 @@
 import { Button } from 'components/Button'
 import { IconButton } from 'components/IconButton'
-import { Select, SelectOption } from 'components/Select'
+import { Select } from 'components/Select'
 import { TextArea } from 'components/TextArea'
 import { TextInput } from 'components/TextInput'
 import { useTodoPage } from 'pages/TodoPage/hooks/useTodoPage'
+import { CATEGORIES_OPTIONS } from 'pages/TodoPage/constants/todoCategories'
+import { useMemo } from 'react'
 import useTodoModal from './hooks/useTodoModal'
 import styles from './TodoModal.module.css'
 
-const CATEGORIES_OPTIONS: SelectOption[] = [
-  {
-    text: 'Home',
-    value: 'home'
-  },
-  {
-    text: 'Study',
-    value: 'study'
-  },
-  {
-    text: 'Work',
-    value: 'work'
-  }
-]
-
 const TodoModal = () => {
   const {
-    states: { isOpenTodoModal },
+    states: { isOpenTodoModal, selectedTodo },
     handlers: { closeTodoModal }
   } = useTodoPage()
 
-  const { onChangeInput, onSubmitForm, hasError } = useTodoModal()
+  const { modalFormData, onChangeInput, onSubmitForm, hasError, resetForm } = useTodoModal()
+  const isEditing = useMemo(() => !!selectedTodo, [selectedTodo])
 
   if (!isOpenTodoModal) return null
 
   return (
     <div className={styles.modal}>
       <header className={styles.header}>
-        <IconButton onClick={closeTodoModal} icon={<i className="fa-solid fa-xmark" />} />
+        <IconButton onClick={() => closeTodoModal(resetForm)} icon={<i className="fa-solid fa-xmark" />} />
         <div className={styles.titleContainer}>
-          <h1>Create new todo</h1>
+          <h1>{isEditing ? 'Edit todo' : 'Create new todo'}</h1>
         </div>
       </header>
 
@@ -48,6 +36,7 @@ const TodoModal = () => {
           id='todoTitleId'
           name='title'
           onChange={onChangeInput}
+          value={modalFormData.title}
         />
 
         <TextArea
@@ -57,6 +46,7 @@ const TodoModal = () => {
           id='todoDescriptionId'
           name='description'
           onChange={onChangeInput}
+          value={modalFormData.description}
         />
 
         <Select
@@ -65,9 +55,10 @@ const TodoModal = () => {
           onChange={onChangeInput}
           label='Category'
           options={CATEGORIES_OPTIONS}
+          value={modalFormData.category}
         />
 
-        <Button extraClasses={styles.submitButton}>Create</Button>
+        <Button extraClasses={styles.submitButton}>{ isEditing ? 'Update' : 'Create' }</Button>
       </form>
 
       { hasError && (

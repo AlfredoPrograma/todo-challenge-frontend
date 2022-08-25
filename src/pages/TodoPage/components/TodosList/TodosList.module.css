@@ -1,0 +1,7 @@
+.todosList {
+  width: 35%;
+  min-width: 24rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
