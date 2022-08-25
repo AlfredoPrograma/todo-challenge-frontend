@@ -1,7 +1,7 @@
 .page {
   padding: 2rem;
   height: 100%;
-  background: #0F2027;  /* FALLBACK */
-  background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* old Safari and Chrome */
-  background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+  background: #C9D6FF; 
+  background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);  
+  background: linear-gradient(to right, #E2E2E2, #C9D6FF);
 }
